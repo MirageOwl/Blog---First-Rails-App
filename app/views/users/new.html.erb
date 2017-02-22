@@ -1,0 +1,35 @@
+<% provide(:title, 'Sign up') %>
+<div class="container" style="border:1px solid black;border-radius:1rem;padding:1rem;background-color:#eba">
+  <h1>Sign up</h1>
+
+  <%= form_for(@user, url: signup_path) do |f| %>
+  <%= render 'shared/error_messages' %>
+  <div style="border:1px solid black;border-radius:1rem;padding:1rem;background-color:#fee;margin-top:2rem;">
+    <div class="row">
+      <div class="six columns">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+      <div class="six columns">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="six columns">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+      <div class="six columns">
+        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <%= f.submit "Create my acount", class: "button button-primary" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

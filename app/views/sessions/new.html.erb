@@ -1,0 +1,27 @@
+<% provide(:title, 'Log in') %>
+<div class="container" style="border:1px solid black;border-radius:1rem;padding:1rem;background-color:#eba">
+  <h1>Log in</h1>
+
+  <%= form_for(:session, url: login_path) do |f| %>
+  <div style="border:1px solid black;border-radius:1rem;padding:1rem;background-color:#fee;margin-top:2rem;">
+    <div class="row">
+      <div class="six columns">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <%= f.submit "Log in", class: "button button-primary" %>
+      </div>
+    </div>
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
+  <% end %>
+</div>

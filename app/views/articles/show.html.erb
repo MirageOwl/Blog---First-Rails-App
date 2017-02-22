@@ -1,0 +1,29 @@
+<div class="container ">
+  <div class="row ">
+    <div class="twelve collumns" style="border:1px solid black;border-radius:1rem;padding:1rem;">
+      <p>
+        <strong>Title:</strong>
+        <%= @article.title %>
+      </p>
+
+      <p>
+        <strong>Text:</strong>
+        <%= @article.text %>
+      </p>
+
+      <%= link_to 'Back', articles_path, class: "button" %>
+      <%= link_to 'Edit', edit_article_path(@article), class: "button" %>
+      <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+
+      <div style="border:1px solid black;border-radius:1rem;padding:1rem;">
+      <h2>Comments</h2>
+      <%= render @article.comments %>
+      </div>
+
+      <div style="border:1px solid black;border-radius:1rem;padding:1rem;margin-top:2rem;">
+        <h2>Add a comment</h2>
+        <%= render 'comments/form' %>
+      </div>
+    </div>
+  </div>
+</div>
